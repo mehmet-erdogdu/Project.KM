@@ -1,0 +1,13 @@
+D:\Works\Repos\Project.KM\Project.Domain\bin\Debug\Project.Domain.dll
+D:\Works\Repos\Project.KM\Project.Domain\bin\Debug\Project.Domain.pdb
+D:\Works\Repos\Project.KM\Project.Domain\obj\Debug\Project.Domain.csproj.CoreCompileInputs.cache
+D:\Works\Repos\Project.KM\Project.Domain\obj\Debug\Project.Domain.dll
+D:\Works\Repos\Project.KM\Project.Domain\obj\Debug\Project.Domain.pdb
+D:\Works\Repos\Project.KM\Project.Domain\bin\Debug\Dapper.dll
+D:\Works\Repos\Project.KM\Project.Domain\bin\Debug\Dapper.FastCrud.dll
+D:\Works\Repos\Project.KM\Project.Domain\bin\Debug\Newtonsoft.Json.dll
+D:\Works\Repos\Project.KM\Project.Domain\bin\Debug\Dapper.xml
+D:\Works\Repos\Project.KM\Project.Domain\bin\Debug\Dapper.FastCrud.xml
+D:\Works\Repos\Project.KM\Project.Domain\bin\Debug\Newtonsoft.Json.xml
+D:\Works\Repos\Project.KM\Project.Domain\obj\Debug\Project.Domain.csproj.CopyComplete
+D:\Works\Repos\Project.KM\Project.Domain\obj\Debug\Project.Domain.csprojAssemblyReference.cache

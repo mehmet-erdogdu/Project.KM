@@ -1,0 +1,9 @@
+20181111
+Http katmanýna owin referanslarý eklendi. Güvenlik için
+
+20181109
+Web Config de apiye dýþardan eriþim için satýr eklendi
+
+20181107
+Katmanlý Mimari projesinin temeli atýldý :)
+Project.Mobile eklenmedi

@@ -1,0 +1,84 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/wwwroot/jquery-3.0.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#btnLogout").click(function () {
+                if (localStorage.getItem("token") != null) {
+                    localStorage.removeItem("token");
+                    $("#lblResult").text("");
+                }
+                else {
+                    alert("Zaten giriş yapmadınız!");
+                }
+            });
+
+            $("#btnLogin").click(function () {
+                var username = $("#txtUserName").val();
+                var password = $("#txtPassword").val();
+                $.ajax({
+                    url: "http://localhost:51043/token",
+                    type: "POST",
+                    data: { "username": username, "password": password, "grant_type": "password" },
+                    crossDomain: true,
+                    dataType: "json",
+                    success: function (result) {
+                        localStorage.setItem("token", JSON.stringify(result));
+                        $("#lblResult").text(JSON.stringify(result));
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error " + status + " - " + error);
+                    }
+                });
+            });
+
+            $("#btnClick").click(function () {
+                var token = $.parseJSON(localStorage.getItem("token"));
+                if (token == null) {
+                    alert("Giriş Yapmamışsınız");
+                    return;
+                }
+                else {
+                    var accessToken = token.access_token;
+                }
+                $.ajax({
+                    url: "http://localhost:51043/http/GetPersonalDataList",
+                    type: "GET",
+                    crossDomain: true,
+                    headers: {
+                        "accept": "application/json", "content-type": "application/json",
+                        "authorization": "bearer " + accessToken
+                    },
+                    dataType: "json",
+                    success: function (result) {
+                        alert(JSON.stringify(result));
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error " + status + " - " + error);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btnClick">Get Servis</button>
+    <br />
+    <input type="text" id="txtUserName" value="Mehmet" placeholder="Kullanıcı Adı" />
+    <br />
+    <input type="password" id="txtPassword" value="1234" placeholder="Şifre" />
+    <br />
+    <button id="btnLogin">Giriş Yap</button> | <button id="btnLogout">Çıkış Yap</button>
+    <br />
+    <label id="lblResult"></label>
+</body>
+</html>
